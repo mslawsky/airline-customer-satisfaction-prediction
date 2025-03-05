@@ -45,7 +45,7 @@ Our analysis identified key satisfaction thresholds:
 
 The visualization below shows how the model makes decisions, with in-flight entertainment as the top-level split:
 
-![Decision Tree Tuned](decision-tree-tuned.png)
+![Decision Tree Tuned](decision-tree-hypertuned.png)
 
 ---
 
