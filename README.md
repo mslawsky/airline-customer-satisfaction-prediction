@@ -1,103 +1,127 @@
-# Airline Customer Satisfaction Prediction 🛫
+# Airline Customer Satisfaction Analysis 🛫
 
-**Customer Satisfaction and Inflight Entertainment Analysis**  
-This project explores how customer satisfaction can be predicted based on in-flight entertainment ratings, using logistic regression. The airline is particularly interested in understanding how improvements in entertainment quality might lead to higher satisfaction levels, ultimately guiding operational decisions and resource allocation.
+This repository contains a comprehensive analysis of airline customer satisfaction factors using multiple machine learning approaches. Our models identify key drivers of satisfaction to guide strategic investments in customer experience.
 
-![Inflight Entertainment vs Customer Satisfaction](inflight-entertainment-rating.png)
-
----
-
-## Executive Summary & Key Insights 📄
-
-This analysis demonstrates the power of inflight entertainment ratings in predicting overall customer satisfaction. Using logistic regression, we found:
-
-1. **Key Driver of Satisfaction**: 
-   - **Inflight Entertainment** is the most significant predictor of customer satisfaction.
-   - **Impact**: Enhancing entertainment quality can significantly improve satisfaction levels.
-   - **Threshold Insight**: Ratings between 2 and 3 on a 5-point scale have the greatest impact on satisfaction. Improving entertainment from "average" to "good" dramatically increases satisfaction.
-
-2. **Customer Satisfaction Prediction**: 📈
-   - Customers with ratings of 4-5 for entertainment have a greater than 70% chance of being satisfied.
-   - Customers with ratings below 2 have less than a 20% chance of being satisfied.
-   
-3. **Model Accuracy**: ✅
-   - The logistic regression model correctly classifies about 80% of customers' satisfaction levels.
-   - **Key Metrics**: Accuracy: 80.15%, Precision: 81.61%, Recall: 82.15%, F1 Score: 81.88%.
+![Airline Customer Satisfaction](inflight-entertainment-rating.png)
 
 ---
 
-## Business Applications & Strategic Impact 💡
+## Project Overview 📊
 
-The insights gained from this analysis are critical for enhancing customer satisfaction and guiding investment decisions in customer service:
-
-1. **Targeted Investment in Entertainment**: 
-   - Focus on improving entertainment experiences, especially for customers rating it as average (2-3). These customers show the highest potential for satisfaction improvement.
-   
-2. **Operational Efficiency**:
-   - By investing in the most impactful aspects of the customer experience, airlines can optimize resources and maximize return on investment (ROI) in customer satisfaction initiatives.
-   
-3. **Customer Segmentation**:
-   - Develop tailored marketing strategies for customers with lower satisfaction potential by targeting entertainment improvements in the critical 2-3 rating range.
-
-4. **Continuous Improvement**:
-   - Use this model to track changes in satisfaction over time and adapt strategies for enhancing inflight services, ensuring sustainable improvement in customer loyalty.
+This analysis employs both logistic regression and decision tree models to identify and validate the key factors driving airline customer satisfaction. Using survey data from 129,880 customers, we provide data-driven insights to guide operational decisions and resource allocation.
 
 ---
 
-## Methodology & Insights 🔍
+## Key Findings 🔍
 
-### Data Preparation & Exploration
-- **Data Source**: The dataset includes 129,880 customer records, featuring variables like customer type, age, travel class, and in-flight services.
-- **Key Variables**: Inflight entertainment ratings and customer satisfaction levels were the focus of this analysis.
+### Primary Driver of Satisfaction
+
+Both models consistently identified **in-flight entertainment** as the most significant predictor of customer satisfaction:
+
+- **Logistic Regression**: Demonstrated the strong correlation between entertainment ratings and satisfaction probability
+- **Decision Tree**: Quantified that in-flight entertainment accounts for approximately 46% of the impact on satisfaction prediction
+
+### Feature Importance Ranking
+
+Our decision tree model clearly identified the hierarchical importance of different features:
+
+![Top 10 Ranked Features](features-ranked.png)
+
+### Secondary Factors of Importance
+
+The decision tree analysis revealed additional important factors:
+- **Seat comfort** (20% importance)
+- **Ease of online booking** (8% importance)
+- **Customer type** and **class of travel** (smaller but notable impacts)
+
+![Feature Importance Visualization](feature-importance.png)
+
+### Critical Thresholds
+
+Our analysis identified key satisfaction thresholds:
+- Entertainment ratings between 2-3 represent the critical transition zone
+- Customers rating entertainment 4-5 have >70% probability of overall satisfaction
+- Customers rating entertainment below 2 have <20% probability of satisfaction
+
+### Decision Tree Visualization
+
+The visualization below shows how the model makes decisions, with in-flight entertainment as the top-level split:
+
+![Decision Tree Visualization](decision-tree-viz.png)
+
+---
+
+## Models and Performance 📈
 
 ### Logistic Regression Model
-- **Model Approach**: A binomial logistic regression model was used to predict customer satisfaction based on inflight entertainment ratings.
-- **Predictive Power**: The logistic regression model demonstrated a strong correlation, providing actionable predictions for customer satisfaction.
+- **Accuracy**: 80.15%
+- **Precision**: 81.61%
+- **Recall**: 82.15%
+- **F1 Score**: 81.88%
 
-### Model Evaluation
-- **Evaluation Metrics**:
-   - The model achieved an accuracy of **80.15%**, providing reliable predictions.
-   - Precision and recall values indicated a balanced approach in predicting both satisfied and dissatisfied customers.
+### Decision Tree Model
+- **Accuracy**: 94.02%
+- **Precision**: 95.41%
+- **Recall**: 93.55%
+- **F1 Score**: 94.47%
 
-### Visualization: Inflight Entertainment vs Satisfaction
-- A logistic regression curve was plotted, showcasing the S-shaped relationship between entertainment ratings and customer satisfaction. This curve highlights where small improvements in entertainment can lead to significant increases in satisfaction.
-
----
-
-## Technical Analysis (For Reference) 📊
-
-1. **Logistic Regression Coefficients**:
-   - **Intercept**: -3.19
-   - **Coefficient for Inflight Entertainment**: 0.9975
-   - The model's coefficients indicate a positive relationship between entertainment ratings and satisfaction.
-
-2. **Confusion Matrix**:
-   - The model successfully identified satisfied and dissatisfied customers, with only minor errors in prediction. False positives (predicting satisfaction when not satisfied) and false negatives (missing satisfied customers) were balanced, ensuring fair performance.
+The decision tree model's confusion matrix shows excellent classification performance:
 
 ![Confusion Matrix](confusion-matrix.png)
 
----
-
-## Recommendations & Next Steps 📅
-
-1. **Invest in Entertainment Improvements**:
-   - Focus on enhancing the entertainment experience for customers in the 2-3 rating range, as this offers the highest potential for improving satisfaction.
-
-2. **Expand the Model**:
-   - Incorporate other factors affecting satisfaction, such as food quality, seat comfort, and staff service, to create a more comprehensive prediction model.
-
-3. **Monitor and Adapt**:
-   - Continuously monitor customer satisfaction trends and adapt the model as new data becomes available, ensuring strategies stay aligned with evolving customer preferences.
+The significantly higher performance of the decision tree model suggests that customer satisfaction involves non-linear relationships and interaction effects between variables.
 
 ---
 
-## Conclusion 🚀
+## Strategic Recommendations 💡
 
-This analysis underscores the significant role of inflight entertainment in shaping customer satisfaction. By focusing on this key driver, airlines can prioritize customer experience improvements, ensuring higher satisfaction and loyalty while optimizing operational costs.
+Based on our multi-model analysis, we recommend:
+
+1. **Prioritize in-flight entertainment improvements**
+   - Focus on bringing the entertainment experience from "average" (2-3) to "good" (4+)
+   - This represents the highest ROI opportunity for satisfaction improvement
+
+2. **Invest in seat comfort enhancements**
+   - As the second most important factor, seat ergonomics and quality improvements will yield significant satisfaction gains
+
+3. **Streamline online booking processes**
+   - Optimizing the digital booking experience can drive meaningful satisfaction increases
+
+4. **Implement predictive satisfaction modeling**
+   - Deploy our high-accuracy model (94%) to identify potentially dissatisfied customers before journey completion
+   - Enable proactive service recovery opportunities
 
 ---
 
-## Contact ✉️
+## Repository Structure 📁
+
+- `data/`: Contains the airline customer survey dataset
+- `notebooks/`: Jupyter notebooks with detailed analysis
+  - `logistic_regression_analysis.ipynb`: Initial model exploring entertainment ratings impact
+  - `decision_tree_analysis.ipynb`: Advanced model identifying multiple factors and interactions
+- `scripts/`: Python scripts for model implementation
+  - `airline-cs-logistic.py`: Logistic regression model implementation
+  - `airline-cs-decision-tree.py`: Decision tree model implementation
+- `visualizations/`: Contains key visualizations and model outputs
+  - `inflight-entertainment-rating.png`: Logistic regression curve of entertainment vs. satisfaction
+  - `confusion-matrix.png`: Evaluation of model prediction accuracy
+  - `feature-importance.png`: Decision tree feature importance visualization
+  - `features-ranked.png`: Ranked importance of top 10 features
+  - `decision-tree-viz.png`: Visual representation of the decision tree
+
+---
+
+## Future Work 🚀
+
+Potential extensions of this analysis include:
+- Ensemble methods combining multiple models for even higher accuracy
+- Time-series analysis to track satisfaction changes after service improvements
+- Cluster analysis to identify distinct customer segments with different satisfaction drivers
+- Deployment of a real-time satisfaction prediction system
+
+---
+
+## Contact Information ✉️
 
 For inquiries about this analysis:
 - [LinkedIn Profile](https://www.linkedin.com/in/melissaslawsky/)
