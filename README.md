@@ -25,7 +25,7 @@ Both models consistently identified **in-flight entertainment** as the most sign
 
 Our decision tree model clearly identified the hierarchical importance of different features:
 
-![Top 10 Most Important Features](Top 10 Most Important Features.png)
+![Feature Importance](features-ranked.png)
 
 ### Secondary Factors of Importance
 
@@ -45,7 +45,7 @@ Our analysis identified key satisfaction thresholds:
 
 The visualization below shows how the model makes decisions, with in-flight entertainment as the top-level split:
 
-![Best Decision Tree](Best Decision Tree (Limited to Depth 3 for Visualization).png)
+![Decision Tree Tuned](decision-tree-tuned.png)
 
 ---
 
@@ -65,7 +65,7 @@ The visualization below shows how the model makes decisions, with in-flight ente
 
 The decision tree model's confusion matrix shows excellent classification performance:
 
-![Confusion Matrix](Confusion Matrix.png)
+![Confusion Matrix](confusion-matrix.png)
 
 The significantly higher performance of the decision tree model suggests that customer satisfaction involves non-linear relationships and interaction effects between variables.
 
@@ -94,16 +94,17 @@ Based on our multi-model analysis, we recommend:
 ## Repository Files 📁
 
 ### Data Files
-- Invistico_Airline.csv (CSV)
+- invisto-airline.csv (CSV)
 
 ### Python Scripts
 - airline-cs-logistic.py (PY)
 - airline-cs-decision-tree.py (PY)
 
 ### Visualizations
-- Confusion Matrix.png (PNG)
-- Best Decision Tree (Limited to Depth 3 for Visualization).png (PNG)
-- Top 10 Most Important Features.png (PNG)
+- confusion-matrix.png (PNG)
+- decision-tree-tuned.png (PNG)
+- decision-tree.png (PNG)
+- features-ranked.png (PNG)
 - inflight-entertainment-rating.png (PNG)
 
 ---
