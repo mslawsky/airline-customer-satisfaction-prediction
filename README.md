@@ -25,7 +25,7 @@ Both models consistently identified **in-flight entertainment** as the most sign
 
 Our decision tree model clearly identified the hierarchical importance of different features:
 
-![Top 10 Ranked Features](features-ranked.png)
+![Top 10 Most Important Features](Top 10 Most Important Features.png)
 
 ### Secondary Factors of Importance
 
@@ -33,8 +33,6 @@ The decision tree analysis revealed additional important factors:
 - **Seat comfort** (20% importance)
 - **Ease of online booking** (8% importance)
 - **Customer type** and **class of travel** (smaller but notable impacts)
-
-![Feature Importance Visualization](feature-importance.png)
 
 ### Critical Thresholds
 
@@ -47,7 +45,7 @@ Our analysis identified key satisfaction thresholds:
 
 The visualization below shows how the model makes decisions, with in-flight entertainment as the top-level split:
 
-![Decision Tree Visualization](decision-tree-viz.png)
+![Best Decision Tree](Best Decision Tree (Limited to Depth 3 for Visualization).png)
 
 ---
 
@@ -67,7 +65,7 @@ The visualization below shows how the model makes decisions, with in-flight ente
 
 The decision tree model's confusion matrix shows excellent classification performance:
 
-![Confusion Matrix](confusion-matrix.png)
+![Confusion Matrix](Confusion Matrix.png)
 
 The significantly higher performance of the decision tree model suggests that customer satisfaction involves non-linear relationships and interaction effects between variables.
 
@@ -93,21 +91,20 @@ Based on our multi-model analysis, we recommend:
 
 ---
 
-## Repository Structure 📁
+## Repository Files 📁
 
-- `data/`: Contains the airline customer survey dataset
-- `notebooks/`: Jupyter notebooks with detailed analysis
-  - `logistic_regression_analysis.ipynb`: Initial model exploring entertainment ratings impact
-  - `decision_tree_analysis.ipynb`: Advanced model identifying multiple factors and interactions
-- `scripts/`: Python scripts for model implementation
-  - `airline-cs-logistic.py`: Logistic regression model implementation
-  - `airline-cs-decision-tree.py`: Decision tree model implementation
-- `visualizations/`: Contains key visualizations and model outputs
-  - `inflight-entertainment-rating.png`: Logistic regression curve of entertainment vs. satisfaction
-  - `confusion-matrix.png`: Evaluation of model prediction accuracy
-  - `feature-importance.png`: Decision tree feature importance visualization
-  - `features-ranked.png`: Ranked importance of top 10 features
-  - `decision-tree-viz.png`: Visual representation of the decision tree
+### Data Files
+- Invistico_Airline.csv (CSV)
+
+### Python Scripts
+- airline-cs-logistic.py (PY)
+- airline-cs-decision-tree.py (PY)
+
+### Visualizations
+- Confusion Matrix.png (PNG)
+- Best Decision Tree (Limited to Depth 3 for Visualization).png (PNG)
+- Top 10 Most Important Features.png (PNG)
+- inflight-entertainment-rating.png (PNG)
 
 ---
 
