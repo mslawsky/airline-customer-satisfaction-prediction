@@ -62,7 +62,7 @@ Our analysis across models identified key satisfaction thresholds:
 
 The feature importance visualization from our XGBoost model shows the relative impact of different factors:
 
-![XGBoost Feature Importance](xgboost-features.png)
+![XGBoost Feature Importance](ensemble-feature-importance.png)
 
 ---
 
