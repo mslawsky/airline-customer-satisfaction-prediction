@@ -8,7 +8,7 @@ This repository contains a comprehensive analysis of airline customer satisfacti
 
 ## Project Overview 📊
 
-This analysis employs both logistic regression and decision tree models to identify and validate the key factors driving airline customer satisfaction. Using survey data from 129,880 customers, we provide data-driven insights to guide operational decisions and resource allocation.
+This analysis employs logistic regression, decision tree, and random forest models to identify and validate the key factors driving airline customer satisfaction. Using survey data from 129,880 customers, we provide data-driven insights to guide operational decisions and resource allocation.
 
 ---
 
@@ -16,10 +16,11 @@ This analysis employs both logistic regression and decision tree models to ident
 
 ### Primary Driver of Satisfaction
 
-Both models consistently identified **in-flight entertainment** as the most significant predictor of customer satisfaction:
+All models consistently identified **in-flight entertainment** as the most significant predictor of customer satisfaction:
 
 - **Logistic Regression**: Demonstrated the strong correlation between entertainment ratings and satisfaction probability
 - **Decision Tree**: Quantified that in-flight entertainment accounts for approximately 46% of the impact on satisfaction prediction
+- **Random Forest**: Confirmed in-flight entertainment as the top feature while providing more robust feature importance rankings
 
 ### Feature Importance Ranking
 
@@ -63,11 +64,29 @@ The visualization below shows how the model makes decisions, with in-flight ente
 - **Recall**: 93.55%
 - **F1 Score**: 94.47%
 
-The decision tree model's confusion matrix shows excellent classification performance:
+### Random Forest Model
+- **Accuracy**: 95.28%
+- **Precision**: 96.13% 
+- **Recall**: 94.89%
+- **F1 Score**: 95.50%
+
+The confusion matrices show excellent classification performance, with the random forest model offering slight improvements over the decision tree due to its ensemble approach.
 
 ![Confusion Matrix](confusion-matrix.png)
 
-The significantly higher performance of the decision tree model suggests that customer satisfaction involves non-linear relationships and interaction effects between variables.
+The higher performance of both tree-based models suggests that customer satisfaction involves non-linear relationships and interaction effects between variables that the logistic regression model cannot fully capture.
+
+### Data Leakage Identification & Resolution
+
+During our random forest implementation, we identified and addressed a critical data leakage issue:
+
+- **The Issue**: One-hot encoding created two binary columns from our target variable: `satisfaction_satisfied` (our target) and `satisfaction_dissatisfied` (its inverse). Including the latter in our feature set created data leakage.
+
+- **The Impact**: Initially, this resulted in artificially perfect model performance metrics (all 1.0000), as the model was effectively using the target variable to predict itself.
+
+- **The Solution**: We explicitly removed both satisfaction-related columns from the feature set and used only `satisfaction_satisfied` as our target, ensuring honest model evaluation.
+
+This experience highlights the importance of careful feature selection and the potential pitfalls of automated preprocessing in machine learning workflows.
 
 ---
 
@@ -86,8 +105,11 @@ Based on our multi-model analysis, we recommend:
    - Optimizing the digital booking experience can drive meaningful satisfaction increases
 
 4. **Implement predictive satisfaction modeling**
-   - Deploy our high-accuracy model (94%) to identify potentially dissatisfied customers before journey completion
+   - Deploy our high-accuracy model (95%+) to identify potentially dissatisfied customers before journey completion
    - Enable proactive service recovery opportunities
+
+5. **Adopt ensemble methods for production**
+   - Consider implementing the random forest model in production environments for its superior generalization capabilities and robustness to outliers
 
 ---
 
@@ -99,6 +121,7 @@ Based on our multi-model analysis, we recommend:
 ### Python Scripts
 - airline-cs-logistic.py (PY)
 - airline-cs-decision-tree.py (PY)
+- airline-cs-random-forest.py (PY)
 
 ### Visualizations
 - confusion-matrix.png (PNG)
@@ -106,16 +129,32 @@ Based on our multi-model analysis, we recommend:
 - decision-tree.png (PNG)
 - features-ranked.png (PNG)
 - inflight-entertainment-rating.png (PNG)
+- random-forest-feature-importance.png (PNG)
+
+---
+
+## Model Evolution 🧠
+
+This project demonstrates a progression of increasingly sophisticated modeling approaches:
+
+1. **Logistic Regression**: Provided a baseline model with good interpretability but limited ability to capture non-linear relationships.
+
+2. **Decision Tree**: Significantly improved performance by capturing non-linear patterns and feature interactions, with high interpretability.
+
+3. **Random Forest**: Further refined our predictive capabilities through ensemble learning, offering the highest performance and robustness against overfitting.
+
+Each model added value to our understanding, with the random forest serving as the most powerful predictor while maintaining the interpretability advantages of tree-based methods.
 
 ---
 
 ## Future Work 🚀
 
 Potential extensions of this analysis include:
-- Ensemble methods combining multiple models for even higher accuracy
+- Additional ensemble methods such as gradient boosting for even higher accuracy
 - Time-series analysis to track satisfaction changes after service improvements
 - Cluster analysis to identify distinct customer segments with different satisfaction drivers
 - Deployment of a real-time satisfaction prediction system
+- Neural network approaches for handling complex interaction effects
 
 ---
 
