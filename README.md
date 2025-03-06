@@ -32,7 +32,7 @@ This difference in findings between earlier models and XGBoost provides valuable
 
 The comparison between model feature importance rankings reveals interesting patterns:
 
-![Feature Importance Comparison](features-comparison.png)
+![Feature Importance Comparison](normalized-feature-importance-comparison.png)
 
 ### Key Satisfaction Factors Identified by XGBoost
 
