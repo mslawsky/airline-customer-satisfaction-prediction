@@ -116,20 +116,20 @@ Based on our multi-model analysis, we recommend:
 ## Repository Files 📁
 
 ### Data Files
-- invisto-airline.csv (CSV)
+- [invisto-airline.csv] (invisto-airline.csv) (CSV)
 
 ### Python Scripts
-- airline-cs-logistic.py (PY)
-- airline-cs-decision-tree.py (PY)
-- airline-cs-random-forest.py (PY)
+- [Airline Logistic Regression] (airline-cs-logistic.py) (PY)
+- [Airline Decision-Tree Analysis] (airline-cs-decision-tree.py) (PY)
+- [Airline Random Forest] (airline-cs-random-forest.py) (PY)
 
 ### Visualizations
-- confusion-matrix.png (PNG)
-- decision-tree-tuned.png (PNG)
-- decision-tree.png (PNG)
-- features-ranked.png (PNG)
-- inflight-entertainment-rating.png (PNG)
-- random-forest-feature-importance.png (PNG)
+- [Confusion Matrix] (confusion-matrix.png) (PNG)
+- [Hyper-tuned Decision Tree] (decision-tree-hypertuned.png) (PNG)
+- [Decision Tree] (decision-tree.png) (PNG)
+- [Ranked Features] (features-ranked.png) (PNG)
+- [Inflight Entertainment Rating] (inflight-entertainment-rating.png) (PNG)
+
 
 ---
 
