@@ -113,23 +113,22 @@ Based on our multi-model analysis, we recommend:
 
 ---
 
-## Repository Files 📁
+## Repository Contents 📁
 
-### Data Files
-- [invisto-airline.csv] (invisto-airline.csv) (CSV)
+1. **Data Files**
+   - [Invisto Airline Data](invisto-airline.csv) (CSV)
 
-### Python Scripts
-- [Airline Logistic Regression] (airline-cs-logistic.py) (PY)
-- [Airline Decision-Tree Analysis] (airline-cs-decision-tree.py) (PY)
-- [Airline Random Forest] (airline-cs-random-forest.py) (PY)
+2. **Python Scripts**
+   - [Airline Logistic Regression](airline-cs-logistic.py) (PY)
+   - [Airline Decision-Tree Analysis](airline-cs-decision-tree.py) (PY)
+   - [Airline Random Forest](airline-cs-random-forest.py) (PY)
 
-### Visualizations
-- [Confusion Matrix] (confusion-matrix.png) (PNG)
-- [Hyper-tuned Decision Tree] (decision-tree-hypertuned.png) (PNG)
-- [Decision Tree] (decision-tree.png) (PNG)
-- [Ranked Features] (features-ranked.png) (PNG)
-- [Inflight Entertainment Rating] (inflight-entertainment-rating.png) (PNG)
-
+3. **Visualizations**
+   - [Confusion Matrix](confusion-matrix.png) (PNG)
+   - [Hyper-tuned Decision Tree](decision-tree-hypertuned.png) (PNG)
+   - [Decision Tree](decision-tree.png) (PNG)
+   - [Ranked Features](features-ranked.png) (PNG)
+   - [Inflight Entertainment Rating](inflight-entertainment-rating.png) (PNG)
 
 ---
 
