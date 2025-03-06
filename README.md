@@ -119,7 +119,7 @@ Based on our multi-model analysis, we recommend:
    - [Invisto Airline Data](invisto-airline.csv) (CSV)
 
 2. **Python Scripts**
-   - [Airline Logistic Regression](airline-cs-logistic.py) (PY)
+   - [Airline Logistic Regression](airline-cs-logistic-regression.py) (PY)
    - [Airline Decision-Tree Analysis](airline-cs-decision-tree.py) (PY)
    - [Airline Random Forest](airline-cs-random-forest.py) (PY)
 
